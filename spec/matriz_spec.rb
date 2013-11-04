@@ -18,5 +18,11 @@ describe Matriz do
 			@c = Matriz.new(2,2,1,1,1,1)
 			(@a - @b).should == @c
 		end
+		it " producto "do
+			@a = Matriz.new(3,3,1,1,1,2,2,2,3,3,3)
+			@b = Matriz.new(3,3,1,2,3,1,2,3,1,2,3)
+			@c = Matriz.new(3,3,3,6,9,6,12,18,9,18,27)
+			(@a * @b).should == @c
+		end
 	end
 end
