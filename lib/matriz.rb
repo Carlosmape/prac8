@@ -75,4 +75,23 @@ class Matriz
 		return es_igual
 	end
 
+	def -(object)
+                if ((object.instance_of?(Matriz) == true) && (@filas == object.filas) && (@columnas == object.columnas))
+                        matrizresultado = Matriz.new(@filas, @columnas)
+                        i = 0
+                        while (i < @filas) do
+                                j = 0
+                                while (j < @columnas) do
+                                        valorsumado = 0
+                                        valorsumado = @matriz[i][j] - object.matriz(i,j)
+                                        matrizresultado.set_matriz(i,j,valorsumado)
+                                        j = j + 1
+                                end
+                                i = i + 1
+                        end
+                        return matrizresultado
+                end
+        end
+
+
 end
