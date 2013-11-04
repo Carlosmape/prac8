@@ -1,8 +1,20 @@
 require "matriz"
+require "fraccion"
+describe Fraccion do
+	it "instanciacion de un racional" do
+		@fa = Fraccion.new(1,2)
+		@fa.numerador.should == 1
+		@fa.denominador.should == 2
+	end
+end
 
 describe Matriz do
 	it "# instanciacion de una matriz" do
 		@a = Matriz.new(2,2,1,1,2,2)
+	end
+	it "# instanciacion de una matriz con racionales" do
+		@fa = Fraccion.new(1,2)
+		@a = Matriz.new(2,2,fa,fa,2,2)
 	end
 	describe "# operaciones con matrices" do
 		it " suma "do
