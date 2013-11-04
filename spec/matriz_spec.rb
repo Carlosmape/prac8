@@ -11,5 +11,12 @@ describe Matriz do
 			@c = Matriz.new(2,2,2,2,4,4)
 			(@a + @b).should == @c
 		end
+		
+		it " resta "do
+			@a = Matriz.new(2,2,2,2,3,3)
+			@b = Matriz.new(2,2,1,1,2,2)
+			@c = Matriz.new(2,2,1,1,1,1)
+			(@a - @b).should == @c
+		end
 	end
 end

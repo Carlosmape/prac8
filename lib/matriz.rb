@@ -56,7 +56,23 @@ class Matriz
                 end
         end
 
-
-
+	def ==(object)
+		if ((object.instance_of?(Matriz) == true)&& (@filas == object.filas) && (@columnas == object.columnas))
+			i = 0
+			while (i < @filas) do
+				j = 0
+				while (j < @columnas) do
+					if (@matriz[i][j] == object.matriz(i,j))
+						es_igual = true
+					else 
+						return es_igual = false
+					end
+					j = j + 1
+				end
+				i = i + 1
+			end
+		end
+		return es_igual
+	end
 
 end
