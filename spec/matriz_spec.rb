@@ -1,7 +1,7 @@
 require 'matriz'
 require 'fraccion'
 
-
+#pruebas sobre la clase fraccion
 describe Fraccion do
 	it "instanciacion de un racional" do
 		@fa = Fraccion.new(1,2)
@@ -10,6 +10,7 @@ describe Fraccion do
 	end
 end
 
+#pruebas sobre la clase matriz
 describe Matriz do
 	it "# instanciacion de una matriz" do
 		@a = Matriz.new(2,2,1,1,2,2)
