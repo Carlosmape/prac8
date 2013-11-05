@@ -54,7 +54,7 @@ class Matriz
                                 j = 0
                                 while (j < @columnas) do
                                         valorsumado = 0
-                                        valorsumado = @matriz[i][j] + object.matriz(i,j) # sumamos los valores i,j de cada matriz
+                                        valorsumado = @matriz[i][j] + object.matriz(i,j) # sumamos los valores ij de cada matriz
                                         matrizresultado.set_matriz(i,j,valorsumado)
                                         j = j + 1
                                 end
@@ -93,7 +93,7 @@ class Matriz
                                 j = 0
                                 while (j < @columnas) do
                                         valorsumado = 0
-                                        valorsumado = @matriz[i][j] - object.matriz(i,j) #se restan los elementos i,j de las dos matrices
+                                        valorsumado = @matriz[i][j] - object.matriz(i,j) #se restan los elementos ij de las dos matrices
                                         matrizresultado.set_matriz(i,j,valorsumado)
                                         j = j + 1
                                 end
@@ -115,7 +115,7 @@ class Matriz
                                         matrizresultado.set_matriz(i,j,0)
                                         while (k < @columnas) do #itera en las columnas de la primera matriz y las filas de la segunda
                                                 aux = (@matriz[i][k] * object.matriz(k,j)) + matrizresultado.matriz(i,j) #formula del calculo del determinante
-                                                matrizresultado.set_matriz(i,j,aux)	#almacena el valor obtenido en la posicion i,j
+                                                matrizresultado.set_matriz(i,j,aux)	#almacena el valor obtenido en la posicion ij
                                                 k = k + 1
                                         end
                                         j = j + 1

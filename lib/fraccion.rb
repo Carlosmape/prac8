@@ -99,14 +99,14 @@ class Fraccion
          #calcula el resto
 	 resto=object.abs * (division - Fraccion.new(division.to_float.to_i,1))
 	 if (object.numerador < 0)
-                #si el numerador es negativo, imprime el opuesto del resto
+                #si el numerador es negativo imprime el opuesto del resto
 		return -resto
 	 end
          #lo imprime
 	 resto  
      end
      
-     #Utilizamos el metodo <=> del modulo Comparable para realizar operaciones comparacionales de fracciones
+     #Utilizamos el metodo del modulo Comparable para realizar operaciones comparacionales de fracciones
      def <=> (object)
           self.to_float<=>object.to_float    
      end
