@@ -1,3 +1,4 @@
+require "fraccion"
 class Matriz
 
 	def initialize(filas, columnas, *elementos)
@@ -92,6 +93,31 @@ class Matriz
                         return matrizresultado
                 end
         end
+
+	def *(object)
+        	if ((object.instance_of?(Matriz)==true) && (@columnas==object.filas()))
+                        i = 0
+                        matrizresultado = Matriz.new(@filas, object.columnas())
+                        while (i < @filas) do
+                                j = 0
+                                while (j < object.columnas()) do
+                                        k = 0
+                                        matrizresultado.set_matriz(i,j,0)
+                                        while (k < @columnas) do
+                                                aux = (@matriz[i][k] * object.matriz(k,j)) + matrizresultado.matriz(i,j)
+                                                matrizresultado.set_matriz(i,j,aux)
+                                                k = k + 1
+                                        end
+                                        j = j + 1
+                                end
+                                i = i + 1
+                        end
+                        return matrizresultado
+                end
+        end
+
+
+
 
 
 end

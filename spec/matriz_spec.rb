@@ -1,5 +1,6 @@
 require "matriz"
-require "fraccion"
+
+
 describe Fraccion do
 	it "instanciacion de un racional" do
 		@fa = Fraccion.new(1,2)
@@ -14,8 +15,9 @@ describe Matriz do
 	end
 	it "# instanciacion de una matriz con racionales" do
 		@fa = Fraccion.new(1,2)
-		@a = Matriz.new(2,2,fa,fa,2,2)
+		@a = Matriz.new(2,2,@fa,@fa,2,2)
 	end
+
 	describe "# operaciones con matrices" do
 		it " suma "do
 			@a = Matriz.new(2,2,1,1,2,2)
@@ -30,11 +32,12 @@ describe Matriz do
 			@c = Matriz.new(2,2,1,1,1,1)
 			(@a - @b).should == @c
 		end
-		it " producto "do
+		 it " producto "do
 			@a = Matriz.new(3,3,1,1,1,2,2,2,3,3,3)
 			@b = Matriz.new(3,3,1,2,3,1,2,3,1,2,3)
 			@c = Matriz.new(3,3,3,6,9,6,12,18,9,18,27)
 			(@a * @b).should == @c
 		end
+
 	end
 end
