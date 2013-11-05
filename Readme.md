@@ -6,5 +6,5 @@ Considere el desarrollo de una clase Ruby para representar Matrices.
 3.-) Además se ha de comprobar el funcionamiento de la aplicación con la herramienta Guard de comprobación continua (Continuous testing) de manera que permita la ejecución de las pruebas definidas con rspec cuando se modifiquen. 
 
 ==============================================================
-Estado actual de TRAVIS [![Build Status](https://travis-ci.org/alu0100699906/pract07.png?branch=master)](https://travis-ci.org/alu0100699906/pract07)
+Estado actual de TRAVIS [![Build Status](https://travis-ci.org/alu0100702293/prac8.png?branch=master)](https://travis-ci.org/alu0100699906/pract07)
 ==============================================================
