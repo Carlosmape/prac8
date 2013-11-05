@@ -1,4 +1,5 @@
-require "matriz"
+require 'matriz'
+require 'fraccion'
 
 
 describe Fraccion do

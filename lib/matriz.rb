@@ -1,4 +1,4 @@
-require "fraccion"
+require 'fraccion'
 class Matriz
 
 	def initialize(filas, columnas, *elementos)
@@ -115,9 +115,5 @@ class Matriz
                         return matrizresultado
                 end
         end
-
-
-
-
 
 end

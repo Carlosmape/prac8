@@ -1,13 +1,11 @@
-#! /usr/bin/ruby
 
-require "gcd.rb"
-require "mcm.rb"
-
-#El modulo Comparable contiene todos los metodos que permiten hacer comparaciones (<,>,=>..)
-include Comparable
-
+require 'gcd.rb'
+require 'mcm.rb'
 
 class Fraccion 
+
+    #El modulo comparable contiene todos los metodos que permiten hacer comparaciones
+    include Comparable
     #metodo que permite acceder a los atributos de la clase
     attr_reader :numerador, :denominador
 
@@ -33,7 +31,7 @@ class Fraccion
         @denominador
     end
     
-    #metodo para mostrar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador
+    #metodo para mostrar por la consola la fraccion de la forma a/b, donde a es el numerador y b el denominador
     def to_s
         "#{@numerador}/#{@denominador}"
     end
