@@ -70,8 +70,17 @@ class Fraccion
     
     #metodo para calcular la suma de dos fracciones
     def +(object)
-        aux=mcm(@denominador,object.denominador)
-        Fraccion.new((((aux*@numerador)/@denominador)+(aux*object.numerador)/object.denominador),aux)
+		if (object.instance_of?(Fraccion)==true)
+		
+			aux=mcm(@denominador,object.denominador)
+			return Fraccion.new((((aux*@numerador)/@denominador)+(aux*object.numerador)/object.denominador),aux)
+			
+		end	
+		if (object.instance_of?( Fixnum )==true)
+			aux=Fraccion.new(object, 1)
+			m=mcm(@denominador,aux.denominador)
+			return Fraccion.new((((m*@numerador)/@denominador) + (m*aux.numerador)/aux.denominador),m)
+		end
     end
  
     #metodo para calcular la resta de dos fracciones
