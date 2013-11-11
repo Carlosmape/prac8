@@ -35,12 +35,12 @@ class Matriz
 	end
 
 	#get elemento i,j
-	def matriz(i,j)
+	def [](i,j)
 		@matriz[i][j]
 	end
 
 	#set elemento i,j
-	def set_matriz(i,j,valor)
+	def []=(i,j,valor)
 		@matriz[i][j] = valor
 	end
 
@@ -54,8 +54,8 @@ class Matriz
                                 j = 0
                                 while (j < @columnas) do
                                         valorsumado = 0
-                                        valorsumado = @matriz[i][j] + object.matriz(i,j) # sumamos los valores ij de cada matriz
-                                        matrizresultado.set_matriz(i,j,valorsumado)
+                                        matrizresultado[i,j] = @matriz[i][j] + object[i,j] # sumamos los valores ij de cada matriz
+                                        
                                         j = j + 1
                                 end
                                 i = i + 1
@@ -71,7 +71,7 @@ class Matriz
 			while (i < @filas) do
 				j = 0
 				while (j < @columnas) do
-					if (@matriz[i][j] == object.matriz(i,j)) #comparamos elemento a elemento
+					if (@matriz[i][j] == object[i,j]) #comparamos elemento a elemento
 						es_igual = true
 					else 
 						return es_igual = false #si solo uno es distinto la funcion devuelve falso
@@ -93,8 +93,8 @@ class Matriz
                                 j = 0
                                 while (j < @columnas) do
                                         valorsumado = 0
-                                        valorsumado = @matriz[i][j] - object.matriz(i,j) #se restan los elementos ij de las dos matrices
-                                        matrizresultado.set_matriz(i,j,valorsumado)
+                                        matrizresultado[i,j]= @matriz[i][j] - object[i,j] #se restan los elementos ij de las dos matrices
+                                        
                                         j = j + 1
                                 end
                                 i = i + 1
@@ -112,10 +112,10 @@ class Matriz
                                 j = 0
                                 while (j < object.columnas()) do
                                         k = 0
-                                        matrizresultado.set_matriz(i,j,0)
+                                        matrizresultado[i,j]=0
                                         while (k < @columnas) do #itera en las columnas de la primera matriz y las filas de la segunda
-                                                aux = (@matriz[i][k] * object.matriz(k,j)) + matrizresultado.matriz(i,j) #formula del calculo del determinante
-                                                matrizresultado.set_matriz(i,j,aux)	#almacena el valor obtenido en la posicion ij
+                                                aux = (@matriz[i][k] * object[k,j] + matrizresultado[i,j] )#formula del calculo del determinante
+                                                matrizresultado[i,j]=aux	#almacena el valor obtenido en la posicion ij
                                                 k = k + 1
                                         end
                                         j = j + 1
