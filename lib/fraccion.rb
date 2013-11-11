@@ -1,7 +1,3 @@
-
-require 'gcd.rb'
-require 'mcm.rb'
-
 class Fraccion 
 
     #el modulo comparable contiene todos los metodos que permiten hacer comparaciones
@@ -118,5 +114,27 @@ class Fraccion
      #Utilizamos el metodo del modulo Comparable para realizar operaciones comparacionales de fracciones
      def <=> (object)
           self.to_float<=>object.to_float    
+     end
+
+     def gcd(n, d)
+         n1,n2 = n.abs,d.abs
+         gcd = 1
+         k = 1
+         while (k <= n1 and k <= n2)
+              if (n1 % k == 0 and n2 % k == 0)
+                  gcd = k
+              end
+              k += 1
+         end
+         return gcd
+     end
+
+
+     #metodo para hallar el minimo comun multiplo de los dos numeros pasados como parametros
+     def mcm(a,b)
+        #mediante el metodo de euclides, resolvemos el minimo comun multiplo mediante el
+        #maximo comun divisor
+        aux=gcd(a,b)
+        (a/aux)*b
      end
 end
